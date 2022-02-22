@@ -1,0 +1,11 @@
+D:\repos\1303Test\bin\Debug\1303Test.exe.config
+D:\repos\1303Test\bin\Debug\1303Test.exe
+D:\repos\1303Test\bin\Debug\1303Test.pdb
+D:\repos\1303Test\obj\Debug\1303Test.csproj.AssemblyReference.cache
+D:\repos\1303Test\obj\Debug\1303Test.csproj.SuggestedBindingRedirects.cache
+D:\repos\1303Test\obj\Debug\_1303Test.Properties.Resources.resources
+D:\repos\1303Test\obj\Debug\1303Test.csproj.GenerateResource.cache
+D:\repos\1303Test\obj\Debug\1303Test.csproj.CoreCompileInputs.cache
+D:\repos\1303Test\obj\Debug\1303Test.exe
+D:\repos\1303Test\obj\Debug\1303Test.pdb
+D:\repos\1303Test\obj\Debug\_1303Test.Form1.resources
