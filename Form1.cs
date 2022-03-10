@@ -16,9 +16,9 @@ namespace _1303Test
         {
             public string Name { get; set; }
             public decimal Price { get; set; }
-            public decimal Quantity { get; set; }
+            public int Quantity { get; set; }
 
-            public Food(string name, decimal price, decimal quantity)
+            public Food(string name, decimal price, int quantity)
             {
                 Name = name;
                 Price = price; 
@@ -34,32 +34,18 @@ namespace _1303Test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Food pechenki = new Food("Печеньки",120,1);
-            Food chai = new Food("чай", 170, 2);
 
-            Foods.Add(pechenki);
-            Foods.Add(chai);
+            string newFoodName = textBox1.Text;
+            string newFoodPrice = textBox3.Text;
+            string newFoodQuantity = textBox2.Text;
+
+            Food newFood = new Food(newFoodName, decimal.Parse(newFoodPrice),int.Parse(newFoodQuantity));
+            Foods.Add(newFood);
 
             foreach(Food food in Foods)
             {
                 listBox1.Items.Add(food.Name + " " + food.Price.ToString() + "руб. " + food.Quantity.ToString() + " шт.");
             }
-
-            //listBox1.Items.Add(pechenki.Name +" "+ pechenki.Price.ToString()+"руб. "+pechenki.Quantity.ToString()+" шт.");
-
-            /*string name;
-            int quantity;
-            int price;
-            //repo comment
-            name = textBox1.Text.Trim();
-            quantity = int.Parse(textBox2.Text);
-            price = int.Parse(textBox3.Text);
-            sum += price * quantity;
-
-
-            listBox1.Items.Add(name +" "+ quantity.ToString()+"шт. "+price.ToString()+"руб.");
-            label4.Text = "Итоговая стоимость: " + sum.ToString();
-            */
         }
     }
 }

@@ -52,11 +52,12 @@
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
+            this.listBox1.ItemHeight = 25;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(273, 356);
+            this.listBox1.Size = new System.Drawing.Size(273, 354);
             this.listBox1.TabIndex = 2;
             // 
             // label1
