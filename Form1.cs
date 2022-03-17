@@ -71,5 +71,26 @@ namespace _1303Test
                 PriceCount(Foods);
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            button3.Text = "\u2191";
+            button4.Text = "\u2193";
+        }
+
+        private void button3_Click(object sender, EventArgs e)//up
+        {
+            int index = listBox1.SelectedIndex;
+            if (index >-1)
+            {
+                Foods.Reverse(index-1,2);
+                
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)//down
+        {
+
+        }
     }
 }

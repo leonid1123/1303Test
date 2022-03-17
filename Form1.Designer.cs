@@ -59,7 +59,6 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 25;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
-            this.listBox1.MultiColumn = true;
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(273, 354);
             this.listBox1.TabIndex = 2;
@@ -139,21 +138,25 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(291, 108);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(62, 53);
+            this.button3.Size = new System.Drawing.Size(70, 53);
             this.button3.TabIndex = 11;
-            this.button3.Text = "UP";
+            this.button3.Text = "up";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.Location = new System.Drawing.Point(291, 223);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(62, 53);
+            this.button4.Size = new System.Drawing.Size(70, 53);
             this.button4.TabIndex = 12;
             this.button4.Text = "DOWN";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
@@ -174,6 +177,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Список покупок";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
