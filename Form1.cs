@@ -33,9 +33,6 @@ namespace _1303Test
                 get { return Quantity; }
                 set { Quantity = value; }
             }
-
-
-
             public Food(string _name, decimal _price, int _quantity)
             {
                 name = _name;
@@ -49,7 +46,7 @@ namespace _1303Test
         {
             InitializeComponent();
         }
-        public decimal PriceCount(List<Food> listToCount)
+        public decimal PriceCount(List<Food> listToCount) //method to count price of all food
         {
             decimal sum = 0;
             foreach (Food _food in listToCount)
@@ -61,7 +58,6 @@ namespace _1303Test
         }
         private void button1_Click(object sender, EventArgs e)//add
         {
-
             string newFoodName = textBox1.Text;
             int quantity;
             decimal price;
@@ -71,9 +67,11 @@ namespace _1303Test
                 Foods.Add(newFood);
                 PrintList(Foods);
                 PriceCount(Foods);
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
             }
         }
-
         private void button2_Click(object sender, EventArgs e) //remove
         {
             if (listBox1.SelectedIndex > -1)
@@ -83,7 +81,7 @@ namespace _1303Test
                 PriceCount(Foods);
             }
         }
-        public void PrintList(List<Food> listToPrint)
+        public void PrintList(List<Food> listToPrint)//method to re-print list
         {
             listBox1.Items.Clear();
             foreach (Food food in listToPrint)
@@ -91,12 +89,11 @@ namespace _1303Test
                 listBox1.Items.Add(food.name + " " + food.price.ToString() + "руб. " + food.quantity.ToString() + " шт.");
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)//up, down button symbols
         {
             button3.Text = "\u2191";
             button4.Text = "\u2193";
         }
-
         private void button3_Click(object sender, EventArgs e)//up
         {
             int index = listBox1.SelectedIndex;
@@ -107,7 +104,6 @@ namespace _1303Test
                 listBox1.SelectedIndex = index - 1;
             }
         }
-
         private void button4_Click(object sender, EventArgs e)//down
         {
             int index = listBox1.SelectedIndex;
@@ -118,8 +114,7 @@ namespace _1303Test
                 listBox1.SelectedIndex = index + 1;
             }
         }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)//edit mode
         {
             if (checkBox1.Checked)
             {
@@ -145,8 +140,7 @@ namespace _1303Test
                 textBox6.Enabled = false;
             }
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)//edit button
         {
             if (listBox1.SelectedIndex > -1)
             {
@@ -154,11 +148,20 @@ namespace _1303Test
                 Foods[listBox1.SelectedIndex].quantity = int.Parse(textBox5.Text);
                 Foods[listBox1.SelectedIndex].price = decimal.Parse(textBox6.Text);
                 PrintList(Foods);
+                PriceCount(Foods);
             }
             //TODO сделать проверки на введенные значения
             //TODO копировать значения в поля при редактировании позиций
-            //TODO добавить пересчет итоговой цены при изменении позиции
+            
             //TODO чистить текстбоксы после добавления продукта
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(listBox1.SelectedIndex > -1)
+            {
+                checkBox1.Enabled = true;
+            }
         }
     }
 }
