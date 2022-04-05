@@ -70,7 +70,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(273, 354);
             this.listBox1.TabIndex = 2;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -166,7 +165,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(70, 53);
             this.button4.TabIndex = 12;
-            this.button4.Text = "DOWN";
+            this.button4.Text = "down";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -276,6 +275,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Список покупок";
             this.Load += new System.EventHandler(this.Form1_Load);

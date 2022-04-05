@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace _1303Test
 {
@@ -107,7 +108,7 @@ namespace _1303Test
         private void button4_Click(object sender, EventArgs e)//down
         {
             int index = listBox1.SelectedIndex;
-            if (index > -1 && index<listBox1.Items.Count-1)
+            if (index > -1 && index < listBox1.Items.Count - 1)
             {
                 Foods.Reverse(index, 2);
                 PrintList(Foods);
@@ -127,7 +128,17 @@ namespace _1303Test
                 textBox4.Enabled = true;
                 textBox5.Enabled = true;
                 textBox6.Enabled = true;
-            } else
+
+                if (listBox1.SelectedIndex > -1)
+                {
+
+                    textBox4.Text = Foods[listBox1.SelectedIndex].name;
+                    textBox5.Text = Foods[listBox1.SelectedIndex].quantity.ToString();
+                    textBox6.Text = Foods[listBox1.SelectedIndex].price.ToString();
+                }
+
+            }
+            else
             {
                 button1.Enabled = true;
                 textBox1.Enabled = true;
@@ -142,26 +153,27 @@ namespace _1303Test
         }
         private void button5_Click(object sender, EventArgs e)//edit button
         {
+            int quantityE;
+            decimal priceE;
             if (listBox1.SelectedIndex > -1)
             {
-                Foods[listBox1.SelectedIndex].name = textBox4.Text;
-                Foods[listBox1.SelectedIndex].quantity = int.Parse(textBox5.Text);
-                Foods[listBox1.SelectedIndex].price = decimal.Parse(textBox6.Text);
-                PrintList(Foods);
-                PriceCount(Foods);
+                if (textBox4.Text.Length>0 && int.TryParse(textBox5.Text,out quantityE) && decimal.TryParse(textBox6.Text, out priceE))
+                {
+                    Foods[listBox1.SelectedIndex].name = textBox4.Text;
+                    Foods[listBox1.SelectedIndex].quantity = quantityE;
+                    Foods[listBox1.SelectedIndex].price = priceE;
+
+                    PrintList(Foods);
+                    PriceCount(Foods);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Не выбран элемент списка");
             }
             //TODO сделать проверки на введенные значения
             //TODO копировать значения в поля при редактировании позиций
-            
             //TODO чистить текстбоксы после добавления продукта
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(listBox1.SelectedIndex > -1)
-            {
-                checkBox1.Enabled = true;
-            }
         }
     }
 }
