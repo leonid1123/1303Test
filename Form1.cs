@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 namespace _1303Test
 {
@@ -157,7 +158,7 @@ namespace _1303Test
             decimal priceE;
             if (listBox1.SelectedIndex > -1)
             {
-                if (textBox4.Text.Length>0 && int.TryParse(textBox5.Text,out quantityE) && decimal.TryParse(textBox6.Text, out priceE))
+                if (textBox4.Text.Length > 0 && int.TryParse(textBox5.Text, out quantityE) && decimal.TryParse(textBox6.Text, out priceE))
                 {
                     Foods[listBox1.SelectedIndex].name = textBox4.Text;
                     Foods[listBox1.SelectedIndex].quantity = quantityE;
@@ -174,6 +175,19 @@ namespace _1303Test
             //TODO сделать проверки на введенные значения
             //TODO копировать значения в поля при редактировании позиций
             //TODO чистить текстбоксы после добавления продукта
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {//save dialog
+            string[] newLines = new string[Foods.Count];
+            for (int i = 0; i < Foods.Count; i++)
+            {
+                newLines[i] = Foods[i].name + ";" + Foods[i].price.ToString()+";"+Foods[i].quantity.ToString();
+            }
+
+            File.WriteAllLines("food.txt", newLines);
+            MessageBox.Show("Файл записан, БОЛЬШЕ НЕ ТЫКАЙ!!!");
+
         }
     }
 }
