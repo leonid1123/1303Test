@@ -262,7 +262,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(684, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(684, 28);
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -272,7 +272,7 @@
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(59, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(59, 24);
             this.toolStripMenuItem1.Text = "Файл";
             // 
             // toolStripMenuItem2
@@ -287,6 +287,7 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem3.Text = "Загрузить";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // Form1
             // 

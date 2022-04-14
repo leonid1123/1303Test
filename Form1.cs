@@ -179,5 +179,19 @@ namespace _1303Test
             MessageBox.Show("Файл записан, БОЛЬШЕ НЕ ТЫКАЙ!!!");
 
         }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {//load dialog
+            Foods.Clear();
+            string[] foodLines = File.ReadAllLines("food.txt");
+            for (int i = 0; i < foodLines.Length; i++)
+            {
+                string[] food1 = foodLines[i].Split(';');
+                Food loadedFood = new Food(food1[0],decimal.Parse(food1[1]),int.Parse(food1[2]));
+                Foods.Add(loadedFood);
+            }
+            PrintList(Foods);
+            PriceCount(Foods);
+        }
     }
 }
