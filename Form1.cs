@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
 using System.IO;
 
 namespace _1303Test
@@ -42,7 +35,7 @@ namespace _1303Test
                 quantity = _quantity;
             }
         }
-        //список продуктов ТУТ!!!!
+        //список продуктов ТУТ!!!! spisokOchenNuzhnoyIVkusnoyEdi
         List<Food> Foods = new List<Food>();
         public Form1()
         {
@@ -172,9 +165,6 @@ namespace _1303Test
             {
                 MessageBox.Show("Не выбран элемент списка");
             }
-            //TODO сделать проверки на введенные значения
-            //TODO копировать значения в поля при редактировании позиций
-            //TODO чистить текстбоксы после добавления продукта
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
